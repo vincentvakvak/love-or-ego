@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamu Maafin Aku Ngak?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        img {
+            width: 300px; /* Set image width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Cover the box without distortion */
+            margin-bottom: 20px; /* Space between image and buttons */
+        }
+        .button {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .iya {
+            background-color: #2ecc71; /* Green */
+        }
+        .tidak {
+            background-color: #e74c3c; /* Red */
+        }
+        .text {
+            font-size: 24px;
+            color: #333;
+            margin: 20px 0; /* Space between text and buttons */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow */
+            border-right: 2px solid; /* Cursor effect */
+            width: 0; /* Start with width 0 for animation */
+            animation: typing 5s steps(30, end) forwards, blink-caret 0.75s step-end infinite, loveAnimation 1s infinite; /* Typing and love animation */
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+        @keyframes loveAnimation {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); } /* Scale up for a "love" effect */
+        }
+    </style>
+</head>
+<body>
+
+    <img src="WhatsApp Image 2025-01-26 at 20.15.59.jpeg" alt="Kamu Maafin Aku Ngak?">
+    <div class="text" id="loveText">Kamu Maafin Aku Ngak?</div>
+    <img src="download.jpeg" alt="Flower Image" style="width: 200px; margin-top: 20px;"> <!-- Flower Image -->
+    <div class="button iya" onclick="showThankYou()">Iya</div>
+    <div class="button tidak" onclick="showSadFace()">Tidak</div>
+
+    <script>
+        // Array of love emojis
+        const loveEmojis = ['❤️', '😍', '😘', '💖', '💕', '💘', '💞', '💗', '💓', '💝'];
+
+        // Function to get a random love emoji
+        function getRandomLoveEmoji() {
+            const randomIndex = Math.floor(Math.random() * loveEmojis.length);
+            return loveEmojis[randomIndex];
+        }
+
+        // Function to append multiple random love emojis
+        function appendRandomLoveEmojis(count) {
+            const loveTextElement = document.getElementById('loveText');
+            for (let i = 0; i < count; i++) {
+                loveTextElement.innerHTML += getRandomLoveEmoji(); // Add a random emoji
+            }
+        }
+
+        // Append 5 random love emojis to the text
+        appendRandomLoveEmojis(5);
+
+        // Function to show thank you message
+        function showThankYou() {
+            alert('Makasih Sayang');
+        }
+
+        // Function to show sad face message
+        function showSadFace() {
+            alert(':(');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Boxes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            flex-direction: column; /* Stack items vertically */
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative; /* Added for positioning */
+            overflow: hidden; /* Ensures image doesn't overflow */
+        }
+        .ego {
+            background-color: #3498db;
+        }
+        .love {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box ego" onclick="moveBox(this)">Ego</div>
+    <div class="box love" onclick="redirectToNewPage()">Love</div>
+
+    <script>
+        function moveBox(box) {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 150));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 150));
+            box.style.position = 'absolute';
+            box.style.left = randomX + 'px';
+            box.style.top = randomY + 'px';
+        }
+
+        function redirectToNewPage() {
+            window.location.href = 'Untitledsdasd.html'; // Redirect to the new page
+        }
+    </script>
+
+</body>
